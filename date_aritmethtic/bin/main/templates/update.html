@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>計算式更新</title>
+</head>
+<body>
+	<div class="container">
+		<form action="#" th:action="@{/update/{dateId}(dateId=${dateArithmetic.dateId})}" method="post">
+			<legend>日付ID</legend>
+			<div class="margin">
+				<input id="dateId" class="input" type="text" disable="disable" th:field="${dateArithmetic.dateId}"/>
+			</div>
+			<legend>日付名</legend>
+			<div class="margin">
+				<input id="dateName" class="input" type="text" disable="disable" th:field="${dateArithmetic.dateName}"/>
+			</div>
+			<legend>加減年</legend>
+			<div class="margin">
+				<input id="adjustmentYEAR" class="input" type="text" disable="disable" th:field="${dateArithmetic.adjustmentYEAR}"/>
+			</div>
+			<legend>加減月</legend>
+			<div class="margin">
+				<input id="adjustmentMONTH" class="input" type="text" disable="disable" th:field="${dateArithmetic.adjustmentMONTH}"/>
+			</div>
+			<legend>加減日</legend>
+			<div class="margin">
+				<input id="adjustmentDAY" class="input" type="text" disable="disable" th:field="${dateArithmetic.adjustmentDAY}"/>
+			</div>
+			<button id="updateButton" name="update" class="button button-default">更新</button>
+			<a id="returnButton" class="button button-default align-right" href="/">戻る</a>
+		</form>
+	</div>
+</body>
+</html>

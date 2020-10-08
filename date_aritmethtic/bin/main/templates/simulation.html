@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+<title>計算結果</title>
+</head>
+<body>
+	<form action="#" th:action="@{/}" method="post">
+		<div class="container">
+		<div class="card card-body card-primary">
+			<fieldset class="fieldset">
+				<legend class="legend">日付を入力してください。</legend>
+				<div class="margin">
+					<input id="baseDate" class="input" type="text" placeholder="2020/01/01" th:field="${simulationForm.baseDate}"/>
+				</div>
+				<button id="simulationButton" name="simulation" class="button button-default">計算開始</button>
+				<a id="registerButton" class="button button-default" href="register">新規登録</a>
+			</fieldset>
+		</div>
+		</div>
+	</form>
+	<div class="container">
+		<table class="table table-striped table-hover table-justify table-middle">
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>日付ID</th>
+					<th>日付名</th>
+					<th>計算結果</th>
+					<th>日付計算式(年/月/日)</th>
+					<th>編集</th>
+				</tr>
+			</thead>
+			<tbody th:remove="all-but-first" th:each="dateFormula, stat : ${results}">
+				<tr>
+					<td th:text="${date.count}">1</td>
+					<td th:id="${date.count} + '_dateId'" th:text="${dateArithmetic.dateId}">abcde</td>
+					<td th:id="${date.count} + '_dateName'" th:text="${dateArithmetic.dateName}">翌月</td>
+					<td th:id="${date.count} + '_arithmetic'"th:text="${dateArithmetic.arithmetic}">2020/02/01</td>
+					<td th:id="${date.count} + '_ymdFormula'" th:text="${dateArithmetic.ymdFormula}">0/1/0</td>
+					<td>
+					<a th:id="${date.count} + '_updateButton'" class="button button-default" th:href="@{/update/{dateId}(dateId=${datedateArithmetic.dateId})}">更新</a>
+					<form action="#" th:acttion="@{/{dateId}(dateId=${dateArithmetic.dateId})}" method="post">
+						<button th:id="${date.count} + '_deleteButton'" name="delete" class="button button-danger">削除</button>
+					</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

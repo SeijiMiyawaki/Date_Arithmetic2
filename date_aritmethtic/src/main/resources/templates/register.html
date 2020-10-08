@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>計算登録</title>
+</head>
+<body>
+	<div class="container">
+	<div class="card card-body card-primary">
+		<fieldset class="fieldset">
+			<form action="#" th:action="@{/}" method="post"></form>
+				<legend class="legend">日付ID</legend>
+				<div class="margin">
+					<input id="dateId" class="input" type="text" placeholder="Y01" th:field="${dateArithmetic.dateId}"/>
+				</div>
+				<legend class="legend">日付名</legend>
+				<div class="margin">
+					<input id="dateName" class="input" type="text" placeholder="翌月" th:field="${dateArithmetic.dateName}"/>
+				</div>
+				<legend class="legend">加減年</legend>
+				<div class="margin">
+					<input id="adjustmentYEAR" class="input" type="text" placeholder="1" th:field="${dateArithmetic.adjustmentYEAR}"/>
+				</div>
+				<legend class="legend">加減月</legend>
+				<div class="margin">
+					<input id="adjustmentMONTH" class="input" type="text" placeholder="2" th:field="${dateArithmetic.adjustmentMONTH}"/>
+				</div>
+				<legend class="legend">加減日</legend>
+				<div class="margin">
+					<input id="adjustmentDAY" class="input" type="text" placeholder="0" th:field="${dateArithmetic.adjustmentDAY}"/>
+				</div>
+				<button id="registerButton" name="register" class="button button-default">登録</button>
+				<a id="returnButton" class="button button-default align-right" href="/">戻る</a>
+		</fieldset>
+	</div>
+	
+	</div>
+</body>
+</html>
